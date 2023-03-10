@@ -1,0 +1,29 @@
+{
+   "name": "taxon",
+   "displayName": "Taxon",
+   "version": "1.0.0",
+   "engines": {
+      "vscode": "^1.75.1"
+   },
+   "categories": [
+      "Programming Languages"
+   ],
+   "contributes": {
+      "languages": [
+         {
+            "id": "taxon",
+            "extensions": [
+               ".taxon"
+            ],
+            "configuration": "./language-configuration.json"
+         }
+      ],
+      "grammars": [
+         {
+            "language": "taxon",
+            "scopeName": "text.taxon",
+            "path": "./syntaxes/taxon.tmLanguage.json"
+         }
+      ]
+   }
+}
