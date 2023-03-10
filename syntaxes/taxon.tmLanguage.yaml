@@ -7,11 +7,11 @@ patterns:
   name: variable.parameter.taxon
 - match: ^\t{15,22}[^#\t* ]+
   name: storage.type.taxon
-- match: ^\t{23,25}[^#\t* ]+
+- match: ^\t{23,27}[^#\t* ]+
   name: entity.name.function.taxon
-- match: ^\t{26,28}[^#\t* ]+
+- match: ^\t{28,30}[^#\t* ]+
   name: constant.numeric.taxon
-- match: ^\t{29,32}[^#\t* ]+
+- match: ^\t{31,36}[^#\t* ]+
   name: string.taxon
 - match: \*
   name: keyword.taxon
