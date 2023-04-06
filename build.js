@@ -9,19 +9,20 @@
 
    let text, json
 
-   text = fs.readFileSync(`./syntaxes/taxon.tmLanguage.yaml`, 'utf8')
+   fs.emptyDirSync(dist)
+
+   text = fs.readFileSync('./syntaxes/taxon.tmLanguage.yaml', 'utf8')
    json = jsYaml.load(text)
 
-   fs.ensureDirSync(`${dist}/syntaxes`)
-   fs.writeJsonSync(`${dist}/syntaxes/taxon.tmLanguage.json`, json)
+   fs.outputJsonSync(`${dist}/syntaxes/taxon.tmLanguage.json`, json)
 
    text = fs.readFileSync('./src/extension.js', 'utf8')
    text = (await terser.minify(text)).code
-   fs.writeFileSync(`${dist}/dist/extension.js`, text)
+   fs.outputFileSync(`${dist}/dist/extension.js`, text)
 
    json = fs.readJsonSync('./package.json')
-   fs.writeJsonSync(`${dist}/package.json`, json)
+   fs.outputJsonSync(`${dist}/package.json`, json)
 
    json = fs.readJsonSync('./language-configuration.json')
-   fs.writeJsonSync(`${dist}/language-configuration.json`, json)
+   fs.outputJsonSync(`${dist}/language-configuration.json`, json)
 })()
